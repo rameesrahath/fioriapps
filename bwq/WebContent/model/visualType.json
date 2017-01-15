@@ -1,0 +1,32 @@
+{
+	"visualList":[
+		{
+			"key":"X-SAP-UI2-CHIP:/UI2/STATIC_APPLAUNCHER",
+			"value":"App Launcher – Static"
+		},
+		{
+			"key":"X-SAP-UI2-CHIP:/UI2/DYNAMIC_APPLAUNCHER",
+			"value":"App Launcher – Dynamic"
+		},
+		{
+			"key":"X-SAP-UI2-CHIP:/MINDSET/BULLET_CHART_TILE_CHIP",
+			"value":"Bullet Chart"
+		},
+		{
+			"key":"X-SAP-UI2-CHIP:/MINDSET/COLUMN_CHART_CHIP",
+			"value":"Column Chart Tile Chip"
+		},
+		{
+			"key":"X-SAP-UI2-CHIP:/MINDSET/COMPARISON_CHART_CHIP",
+			"value":"Comparison Chart"
+		},
+		{
+			"key":"X-SAP-UI2-CHIP:/MINDSET/HARVEY_BALL_CHART_CHIP",
+			"value":"Harvey Ball"
+		},
+		{
+			"key":"X-SAP-UI2-CHIP:/MINDSET/TREND_CHART_CHIP",
+			"value":"Trend Chart Tile Chip"
+		}
+	]
+}

@@ -1,0 +1,96 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:t="sap.ui.table" xmlns:core="sap.ui.core">
+	<f:SimpleForm layout="ResponsiveGridLayout">
+		<f:content>
+			<core:Title text="{i18n>general}" />
+			<!--<Toolbar height="3rem">
+				<Title text="{i18n>general}"/>
+			</Toolbar>-->
+			<Label text="{i18n>title}" class="sapUiTinyMarginTop"/>
+			<Input value="{trendModel>/tileConfiguration/display_title_text}" enabled="true" width="100%"/>
+			<Label text="{i18n>subTitle}" class="sapUiTinyMarginTop"/>
+			<Input value="{trendModel>/tileConfiguration/display_subtitle_text}" enabled="true" width="100%"/>
+			<Label text="{i18n>inform}" class="sapUiTinyMarginTop"/>
+			<Input value="{trendModel>/tileConfiguration/display_info_text}" enabled="true" width="100%"/>
+			<core:Title text="{i18n>dynData}" />
+			<!--<Toolbar height="3rem">
+				<Title text="{i18n>dynData}"/>
+			</Toolbar>-->
+			
+			<Label text="{i18n>query}" class="sapUiTinyMarginTop"/>
+			<Select change="urlQuerySelChange" forceSelection="false" items="{path: 'queryModel1>/results'}" selectedKey="{commonModel>/create_queryId}" enabled="true">
+				<core:Item key="{queryModel1>CubeNam}" text="{queryModel1>Dscrptn}"/>
+			</Select>
+			<Label text="{i18n>servUrl}" class="sapUiTinyMarginTop"/>
+			<Input value="{trendModel>/tileConfiguration/service_url}" enabled="true" showValueHelp="true" valueHelpRequest="valueHelpForSerUrl">
+				<layoutData>
+						<l:GridData span="L9 M9 S9"/>
+				</layoutData>
+			</Input>
+			<Button icon="sap-icon://refresh" press="onRefreshPress" type="Transparent" width="50%">
+				<layoutData>
+						<l:GridData span="L1 M1 S1"/>
+				</layoutData>
+			</Button>
+			<Label text="{i18n>rfrshurl}" class="sapUiTinyMarginTop"/>
+			<Input value="{trendModel>/tileConfiguration/service_refresh_interval}" type="Number" enabled="true" width="100%"/>
+			<Label text="{i18n>firstXlbl}" class="sapUiTinyMarginTop"/>
+			<Input value="{trendModel>/tileConfiguration/firstXLabel}" enabled="true" width="100%"/>
+			<Label text="{i18n>firstXcolr}" class="sapUiTinyMarginTop"/>
+			<Input value="{trendModel>/tileConfiguration/firstXLabelColor}" enabled="true" width="100%"/>
+			<Label text="{i18n>lstXlbl}" class="sapUiTinyMarginTop"/>
+			<Input value="{trendModel>/tileConfiguration/lastXLabel}" enabled="true" width="100%"/>
+			<Label text="{i18n>lstXcolor}" class="sapUiTinyMarginTop"/>
+			<Input value="{trendModel>/tileConfiguration/lastXLabelColor}" enabled="true" width="100%"/>
+			<Label text="{i18n>firstYlbl}" class="sapUiTinyMarginTop"/>
+			<Input value="{trendModel>/tileConfiguration/firstYLabel}" enabled="true" width="100%"/>
+			<Label text="{i18n>firstYcolr}" class="sapUiTinyMarginTop"/>
+			<Input value="{trendModel>/tileConfiguration/firstYLabelColor}" enabled="true" width="100%"/>
+			<Label text="{i18n>lstYlbl}" class="sapUiTinyMarginTop"/>
+			<Input value="{trendModel>/tileConfiguration/lastYLabel}" enabled="true" width="100%"/>
+			<Label text="{i18n>lstYcolor}" class="sapUiTinyMarginTop"/>
+			<Input value="{trendModel>/tileConfiguration/lastYLabelColor}" enabled="true" width="100%"/>
+			<Label text=""/>
+			<t:Table 
+					id="create_trend_chartTable" 
+					rows="{trendModel>/tileConfiguration/chartPoints}" 
+					selectionMode="Single" 
+					visibleRowCount="3" 
+					columnHeaderHeight="32px"
+					ariaLabelledBy="title">
+				<t:columns>
+					<t:Column width="11rem">
+						<Label text="{i18n>actVal}"/>
+						<t:template>
+							<Input value="{trendModel>chartPointY}" showValueHelp="true" valueHelpRequest="valueHelpForForMeasures"/>
+						</t:template>
+					</t:Column>
+					<t:Column width="11rem">
+						<Label text="{i18n>targetval}"/>
+						<t:template>
+							<Input value="{trendModel>targetPointY}" showValueHelp="true" valueHelpRequest="valueHelpForForMeasures"/>
+						</t:template>
+					</t:Column>
+					<t:Column width="11rem">
+						<Label text="{i18n>maxthrdhold}"/>
+						<t:template>
+							<Input value="{trendModel>maxThresholdPointY}" showValueHelp="true" valueHelpRequest="valueHelpForForMeasures"/>
+						</t:template>
+					</t:Column>
+					<t:Column width="11rem">
+						<Label text="{i18n>minthrdhold}"/>
+						<t:template>
+							<Input value="{trendModel>minThresholdPointY}" showValueHelp="true" valueHelpRequest="valueHelpForForMeasures"/>
+						</t:template>
+					</t:Column>
+				</t:columns>
+			</t:Table>
+			<Label text=""/>
+			<FlexBox height="50px" alignItems="Center" justifyContent="End">
+					<items>
+						<Button text="{i18n>add}" press="addNewTrendRow" width="7rem" type="Accept" class="sapUiSmallMarginEnd"/>
+						<Button text="{i18n>remove}" press="remOneTrendRow" width="7rem" type="Reject"/>
+					</items>
+			</FlexBox>
+		</f:content>	
+	</f:SimpleForm>
+</core:FragmentDefinition>

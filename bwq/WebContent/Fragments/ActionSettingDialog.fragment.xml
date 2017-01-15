@@ -1,0 +1,32 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout">
+	<Dialog title="{i18n>transporttitle}">
+		<content>
+				<f:SimpleForm minWidth="1024" maxContainerCols="2" editable="true" layout="ResponsiveGridLayout" title="" labelSpanL="3" labelSpanM="3"
+			emptySpanL="4" emptySpanM="4" columnsL="1" columnsM="1" class="editableForm">
+			<f:content>
+				 
+				<Label text="{i18n>workrequest}" />
+				<ComboBox  
+					change="handleworkbenchchange"
+					showSecondaryValues= "true"
+					items="{ path: 'workbenchrequestmodel>/results'}" 
+					selectedKey="{workbenchrequestmodel>/TR}"
+					selectionChange="handleworkbenchchange"  >
+					<core:ListItem key="{workbenchrequestmodel>id}" text="{workbenchrequestmodel>description}" additionalText="{workbenchrequestmodel>id}"/>
+				</ComboBox>
+				<Label text="{i18n>pckgename}" />
+				<Input value="{packagemodel>/results/0/id}"/>
+			</f:content>
+		</f:SimpleForm> 
+		</content>
+	 
+			<beginButton>
+				<Button text="{i18n>ok}" press="actionsettiongokpress"/>
+			</beginButton>
+			<endButton>
+					<Button text="{i18n>cancel}" press="actionsettiongcancelpress"/>
+			</endButton>
+	</Dialog>
+</core:FragmentDefinition>

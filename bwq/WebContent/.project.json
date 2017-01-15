@@ -1,0 +1,18 @@
+{
+  "mockpreview": {
+    "mockUri": "",
+    "metadataFilePath": "",
+    "loadJSONFiles": false,
+    "loadCustomRequests": false,
+    "mockRequestsFilePath": ""
+  },
+  "hcpdeploy": {
+    "account": "b2b9d6cc8",
+    "name": "zbwqueryadmin",
+    "lastVersionWeTriedToDeploy": "38"
+  },
+  "deploy": {
+    "destination": "gateway1",
+    "name": "ZBWQUERYADMIN"
+  }
+}

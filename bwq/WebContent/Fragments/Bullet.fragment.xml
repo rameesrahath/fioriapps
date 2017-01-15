@@ -1,0 +1,51 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core">
+	<f:SimpleForm layout="ResponsiveGridLayout">
+		<f:content>
+			<core:Title text="{i18n>general}" />
+			<!--<Toolbar height="3rem">
+				<Title text="{i18n>general}"/>
+			</Toolbar>-->
+			<Label text="{i18n>title}" class="sapUiTinyMarginTop"/>
+			<Input value="{detailModel>/configuration/tileConfiguration/display_title_text}" enabled="true" width="100%"/>
+			<Label text="{i18n>subTitle}" class="sapUiTinyMarginTop"/>
+			<Input value="{detailModel>/configuration/tileConfiguration/display_subtitle_text}" enabled="true" width="100%"/>
+			<Label text="{i18n>inform}" class="sapUiTinyMarginTop"/>
+			<Input value="{detailModel>/configuration/tileConfiguration/display_info_text}" enabled="true" width="100%"/>
+			<core:Title text="{i18n>dynData}" />
+			<!--<Toolbar height="3rem">
+				<Title text="{i18n>dynData}"/>
+			</Toolbar>-->
+			<Label text="{i18n>servUrl}" class="sapUiTinyMarginTop"/>
+			<Input value="{detailModel>/configuration/tileConfiguration/service_url}" enabled="true" showValueHelp="true" valueHelpRequest="valueHelpForSerUrl">
+				<layoutData>
+						<l:GridData span="L9 M9 S9"/>
+				</layoutData>
+			</Input>
+			<Button icon="sap-icon://refresh" press="onRefreshPress" type="Transparent" width="50%">
+				<layoutData>
+						<l:GridData span="L1 M1 S1"/>
+				</layoutData>
+			</Button>
+			<Label text="{i18n>rfrshurl}" class="sapUiTinyMarginTop"/>
+			<Input value="{detailModel>/configuration/tileConfiguration/service_refresh_interval}" type="Number" enabled="true" width="100%"/>
+			<Label text="{i18n>scale}" class="sapUiTinyMarginTop"/>
+			<Input value="{detailModel>/configuration/tileConfiguration/scale}" enabled="true" width="100%"/>
+			<Label text="{i18n>scalefactor}" class="sapUiTinyMarginTop"/>
+			<Input value="{detailModel>/configuration/tileConfiguration/scalingFactor}" enabled="true" width="100%"/>
+			<Label text="{i18n>targetval}" class="sapUiTinyMarginTop"/>
+			<Input value="{detailModel>/configuration/tileConfiguration/targetValue}" enabled="true" showValueHelp="true" valueHelpRequest="valueHelpForForMeasures" width="100%"/>
+			<Label text="{i18n>forcastVal}" class="sapUiTinyMarginTop"/>
+			<Input value="{detailModel>/configuration/tileConfiguration/forecastValue}" enabled="true" showValueHelp="true" valueHelpRequest="valueHelpForForMeasures" width="100%"/>
+			<Label text="{i18n>actVal}" class="sapUiTinyMarginTop"/>
+			<Input value="{detailModel>/configuration/tileConfiguration/actualValue}" enabled="true" showValueHelp="true" valueHelpRequest="valueHelpForForMeasures" width="100%"/>
+			<Label text="{i18n>minval}" class="sapUiTinyMarginTop"/>
+			<Input value="{detailModel>/configuration/tileConfiguration/minValue}" enabled="true" showValueHelp="true" valueHelpRequest="valueHelpForForMeasures" width="100%"/>
+			<Label text="{i18n>maxval}" class="sapUiTinyMarginTop"/>
+			<Input value="{detailModel>/configuration/tileConfiguration/maxValue}" enabled="true" showValueHelp="true" valueHelpRequest="valueHelpForForMeasures" width="100%"/>
+			<Label text="{i18n>thredlowval}" class="sapUiTinyMarginTop"/>
+			<Input value="{detailModel>/configuration/tileConfiguration/thresholdLowValue}" enabled="true" showValueHelp="true" valueHelpRequest="valueHelpForForMeasures" width="100%"/>
+			<Label text="{i18n>thredhighval}" class="sapUiTinyMarginTop"/>
+			<Input value="{detailModel>/configuration/tileConfiguration/thresholdHighValue}" enabled="true" showValueHelp="true" valueHelpRequest="valueHelpForForMeasures" width="100%"/>
+		</f:content>	
+	</f:SimpleForm>
+</core:FragmentDefinition>

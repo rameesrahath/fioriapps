@@ -1,0 +1,20 @@
+{
+	"BarColor":[
+		{
+			"key":"Neutral",
+			"value":"Grey"
+		},
+		{
+			"key":"Error",
+			"value":"Red"
+		},
+		{
+			"key":"Critical",
+			"value":"Orange"
+		},
+		{
+			"key":"Good",
+			"value":"Green"
+		}
+	]
+}

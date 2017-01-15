@@ -1,0 +1,48 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core">
+	<f:SimpleForm layout="ResponsiveGridLayout">
+		<f:content>
+			<core:Title text="{i18n>general}" />
+			<!--<Toolbar height="3rem">
+				<Title text="{i18n>general}"/>
+			</Toolbar>-->
+			<Label text="{i18n>title}" class="sapUiTinyMarginTop"/>
+			<Input value="{harveyModel>/tileConfiguration/display_title_text}" enabled="true" width="100%"/>
+			<Label text="{i18n>subTitle}" class="sapUiTinyMarginTop"/>
+			<Input value="{harveyModel>/tileConfiguration/display_subtitle_text}" enabled="true" width="100%"/>
+			<Label text="{i18n>inform}" class="sapUiTinyMarginTop"/>
+			<Input value="{harveyModel>/tileConfiguration/display_info_text}" enabled="true" width="100%"/>
+			<core:Title text="{i18n>dynData}" />
+			<!--<Toolbar height="3rem">
+				<Title text="{i18n>dynData}"/>
+			</Toolbar>-->
+			
+			<Label text="{i18n>query}" class="sapUiTinyMarginTop"/>
+			<Select change="urlQuerySelChange" forceSelection="false" items="{path: 'queryModel1>/results'}" selectedKey="{commonModel>/create_queryId}" enabled="true">
+				<core:Item key="{queryModel1>CubeNam}" text="{queryModel1>Dscrptn}"/>
+			</Select>
+			<Label text="{i18n>servUrl}" class="sapUiTinyMarginTop"/>
+			<Input value="{harveyModel>/tileConfiguration/service_url}" enabled="true" showValueHelp="true" valueHelpRequest="valueHelpForSerUrl">
+				<layoutData>
+						<l:GridData span="L9 M9 S9"/>
+				</layoutData>
+			</Input>
+			<Button icon="sap-icon://refresh" press="onRefreshPress" type="Transparent" width="50%">
+				<layoutData>
+						<l:GridData span="L1 M1 S1"/>
+				</layoutData>
+			</Button>
+			<Label text="{i18n>rfrshurl}" class="sapUiTinyMarginTop"/>
+			<Input value="{harveyModel>/tileConfiguration/service_refresh_interval}" type="Number" enabled="true" width="100%"/>
+			<Label text="{i18n>total}" class="sapUiTinyMarginTop"/>
+			<Input value="{harveyModel>/tileConfiguration/total}" enabled="true" showValueHelp="true" valueHelpRequest="valueHelpForForMeasures" width="100%"/>
+			<Label text="{i18n>totalscale}" class="sapUiTinyMarginTop"/>
+			<Input value="{harveyModel>/tileConfiguration/totalScale}" enabled="true" showValueHelp="true" valueHelpRequest="valueHelpForForMeasures" width="100%"/>
+			<Label text="{i18n>fraction}" class="sapUiTinyMarginTop"/>
+			<Input value="{harveyModel>/tileConfiguration/fraction}" enabled="true" showValueHelp="true" valueHelpRequest="valueHelpForForMeasures" width="100%"/>
+			<Label text="{i18n>fractionscale}" class="sapUiTinyMarginTop"/>
+			<Input value="{harveyModel>/tileConfiguration/fractionScale}" enabled="true" showValueHelp="true" valueHelpRequest="valueHelpForForMeasures" width="100%"/>
+			<Label text="{i18n>scalfactor}" class="sapUiTinyMarginTop"/>
+			<Input value="{harveyModel>/tileConfiguration/scalingFactor}" enabled="true" showValueHelp="true" valueHelpRequest="valueHelpForForMeasures" width="100%"/>
+		</f:content>	
+	</f:SimpleForm>
+</core:FragmentDefinition>

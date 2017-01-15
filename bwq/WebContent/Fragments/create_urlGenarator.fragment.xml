@@ -1,0 +1,26 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<ViewSettingsDialog
+		confirm="handleConfirm"
+		cancel="handleCancel"
+		title="Filters">
+		<filterItems>
+			<ViewSettingsFilterItem text="Dimensions" key="1" items="{urlGenModel>/dimension}" >
+				<items>
+					<ViewSettingsItem text="{urlGenModel>Dscrptn}" key="{urlGenModel>DimUnam}" />
+				</items>
+			</ViewSettingsFilterItem>
+			<ViewSettingsFilterItem text="Measures" key="2" items="{urlGenModel>/measures}" >
+				<items>
+					<ViewSettingsItem text="{urlGenModel>Dscrptn}" key="{urlGenModel>MesUnam}" />
+				</items>
+			</ViewSettingsFilterItem>
+			<ViewSettingsFilterItem text="Filters" key="3" items="{urlGenModel>/filters}" >
+				<items>
+					<ViewSettingsItem text="{urlGenModel>Dscrptn}" key="{urlGenModel>VarNam}" />
+				</items>
+			</ViewSettingsFilterItem>
+		</filterItems>
+	</ViewSettingsDialog>
+</core:FragmentDefinition>

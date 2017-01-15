@@ -1,0 +1,55 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:semantic="sap.m.semantic" controllerName="com.mindset.zbwquery_admin.controller.Master">
+	<Page id="masterPage" title="{i18n>mastTitle}" navButtonPress="onNavBack" showNavButton="false">
+		<subHeader>
+			<Bar id="headerBar">
+				<contentMiddle>
+					<SearchField id="searchField" showRefreshButton="{= !${device>/support/touch} }" tooltip="{i18n>masterSearchTooltip}" width="100%" search="onSearch"/>
+				</contentMiddle>
+			</Bar>
+		</subHeader>
+		<content>
+			<PullToRefresh id="pullToRefresh" visible="{device>/support/touch}" refresh="onRefresh"/>
+			<List id="list" items="{ path: 'masterView1>/results'}" noDataText="{i18n>noData}" mode="{= ${device>/system/phone} ? 'None' : 'SingleSelectMaster'}" growing="true" growingScrollToLoad="true" updateFinished="onUpdateFinished" selectionChange="onSelectionChange">
+				<items>
+					<ObjectListItem 
+									title="{parts:[{path:'masterView1>title'},{path:'masterView1>configuration/tileConfiguration/display_title_text'}],formatter:'.formatter.handlemastertitle'}"
+									type="Active" 
+									press="onSelectionChange" 
+									number=""
+									intro="{masterView1>status}" >
+						<firstStatus>
+							<ObjectStatus text="{masterView1>instanceId}" visible="false"/>
+						</firstStatus>
+					<!--	<secondStatus>
+								<ObjectStatus text=""/> {path:'masterView1>chipId',formatter:'.formatter.handlemasterstatus'}  
+						</secondStatus>-->
+						<attributes>
+							<!--<ObjectAttribute text="{masterView1>chipId}" visible="false"/>    -->  
+							<ObjectAttribute text="{parts:[{path:'masterView1>configuration/tileConfiguration/semantic_object'},{path:'masterView1>configuration/tileConfiguration/navigation_semantic_object'}],formatter:'.formatter.handleSemObj'}"/>                     
+ 							<ObjectAttribute text="{parts:[{path:'masterView1>configuration/tileConfiguration/semantic_action'},{path:'masterView1>configuration/tileConfiguration/navigation_semantic_action'}],formatter:'.formatter.handleSemAct'}"/>                     
+							<!--<ObjectAttribute text="{masterView1>title}"/>-->
+						</attributes>
+					</ObjectListItem>
+				</items>
+			</List>
+		</content>
+		<footer>
+			<Bar>
+				<contentRight>
+					<Select change="handleFilterChange" id="filterselect" tooltip="{i18n>Filter}" icon="sap-icon://filter" type="IconOnly"
+					autoAdjustWidth="true">
+					<core:Item text="{i18n>all}" key="{i18n>all}"/>
+					<core:Item text="{i18n>Tiles}" key="{i18n>Tiles}"/>
+					<core:Item text="{i18n>Target_Mapping}" key="{i18n>Target_Mapping}"/>
+				 
+				</Select>
+					<Button id="create" icon="sap-icon://add" press="handleCreatePress" enabled="{emptyModel>/disable}" />
+				</contentRight>
+				
+			</Bar>
+		</footer>
+	<headerContent>
+	    <core:Icon src="sap-icon://grid" size="2em" id="__icon0" press="onCatelogChange"/>
+	</headerContent>
+	</Page>
+</mvc:View>

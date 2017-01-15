@@ -1,0 +1,66 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core">
+	<f:SimpleForm layout="ResponsiveGridLayout">
+		<f:content>
+			<core:Title text="{i18n>general}" />
+			<!--<Toolbar height="3rem">
+				<Title text="{i18n>general}"/>
+			</Toolbar>-->
+			<Label text="{i18n>title}" class="sapUiTinyMarginTop"/>
+			<Input value="{comparisonModel>/tileConfiguration/display_title_text}" enabled="true" width="100%"/>
+			<Label text="{i18n>subTitle}" class="sapUiTinyMarginTop"/>
+			<Input value="{comparisonModel>/tileConfiguration/display_subtitle_text}" enabled="true" width="100%"/>
+			<Label text="{i18n>inform}" class="sapUiTinyMarginTop"/>
+			<Input value="{comparisonModel>/tileConfiguration/display_info_text}" enabled="true" width="100%"/>
+			<core:Title text="{i18n>dynData}" />
+			<!--<Toolbar height="3rem">
+				<Title text="{i18n>dynData}"/>
+			</Toolbar>-->
+			
+			<Label text="{i18n>query}" class="sapUiTinyMarginTop"/>
+			<Select change="urlQuerySelChange" forceSelection="false" items="{path: 'queryModel1>/results'}" selectedKey="{commonModel>/create_queryId}" enabled="true">
+				<core:Item key="{queryModel1>CubeNam}" text="{queryModel1>Dscrptn}"/>
+			</Select>
+			<Label text="{i18n>servUrl}" class="sapUiTinyMarginTop"/>
+			<Input value="{comparisonModel>/tileConfiguration/service_url}" enabled="true" showValueHelp="true" valueHelpRequest="valueHelpForSerUrl">
+				<layoutData>
+						<l:GridData span="L9 M9 S9"/>
+				</layoutData>
+			</Input>
+			<Button icon="sap-icon://refresh" press="onRefreshPress" type="Transparent" width="50%">
+				<layoutData>
+						<l:GridData span="L1 M1 S1"/>
+				</layoutData>
+			</Button>
+			<Label text="{i18n>rfrshurl}" class="sapUiTinyMarginTop"/>
+			<Input value="{comparisonModel>/tileConfiguration/service_refresh_interval}" type="Number" enabled="true" width="100%"/>
+			<Label text="{i18n>scale}" class="sapUiTinyMarginTop"/>
+			<Input value="{comparisonModel>/tileConfiguration/scale}" enabled="true" width="100%"/>
+			<Label text="{i18n>scalefactor}" class="sapUiTinyMarginTop"/>
+			<Input value="{comparisonModel>/tileConfiguration/scalingFactor}" enabled="true" width="100%"/>
+			<Label text="{i18n>frstbartitle}" class="sapUiTinyMarginTop"/>
+			<Input value="{comparisonModel>/tileConfiguration/firstTitle}" enabled="true" showValueHelp="true" valueHelpRequest="valueHelpForForMeasures" width="100%"/>
+			<Label text="{i18n>frstbarval}" class="sapUiTinyMarginTop"/>
+			<Input value="{comparisonModel>/tileConfiguration/firstValue}" enabled="true" showValueHelp="true" valueHelpRequest="valueHelpForForMeasures" width="100%"/>
+			<Label text="{i18n>frstbarcolor}" class="sapUiTinyMarginTop"/>
+			<Select forceSelection="false" items="{path: 'colorModel>/BarColor'}" selectedKey="{comparisonModel>/tileConfiguration/firstColor}">
+				<core:Item key="{colorModel>key}" text="{colorModel>value}"/>
+			</Select>
+			<Label text="{i18n>secondbartitle}" class="sapUiTinyMarginTop"/>
+			<Input value="{comparisonModel>/tileConfiguration/secondTitle}" enabled="true" showValueHelp="true" valueHelpRequest="valueHelpForForMeasures" width="100%"/>
+			<Label text="{i18n>secondbarval}" class="sapUiTinyMarginTop"/>
+			<Input value="{comparisonModel>/tileConfiguration/secondValue}" enabled="true" showValueHelp="true" valueHelpRequest="valueHelpForForMeasures" width="100%"/>
+			<Label text="{i18n>secondbarcolor}" class="sapUiTinyMarginTop"/>
+			<Select forceSelection="false" items="{path: 'colorModel>/BarColor'}" selectedKey="{comparisonModel>/tileConfiguration/secondColor}">
+				<core:Item key="{colorModel>key}" text="{colorModel>value}"/>
+			</Select>
+			<Label text="{i18n>thirdbartitle}" class="sapUiTinyMarginTop"/>
+			<Input value="{comparisonModel>/tileConfiguration/thirdTitle}" enabled="true" showValueHelp="true" valueHelpRequest="valueHelpForForMeasures" width="100%"/>
+			<Label text="{i18n>thirdbarval}" class="sapUiTinyMarginTop"/>
+			<Input value="{comparisonModel>/tileConfiguration/thirdValue}" enabled="true" showValueHelp="true" valueHelpRequest="valueHelpForForMeasures" width="100%"/>
+			<Label text="{i18n>thirdbarcolor}" class="sapUiTinyMarginTop"/>
+			<Select forceSelection="false" items="{path: 'colorModel>/BarColor'}" selectedKey="{comparisonModel>/tileConfiguration/thirdColor}">
+				<core:Item key="{colorModel>key}" text="{colorModel>value}"/>
+			</Select>
+		</f:content>	
+	</f:SimpleForm>
+</core:FragmentDefinition>

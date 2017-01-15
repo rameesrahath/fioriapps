@@ -1,0 +1,251 @@
+<mvc:View 
+		 controllerName="com.mindset.zbwquery_admin.controller.Create" 
+		 xmlns="sap.m" 
+		 xmlns:mvc="sap.ui.core.mvc" 
+		 xmlns:core="sap.ui.core"
+		 xmlns:semantic="sap.m.semantic" 
+		 xmlns:footerbar="sap.ushell.ui.footerbar" 
+		 xmlns:f="sap.ui.layout.form"
+		 xmlns:l="sap.ui.layout"
+		 xmlns:cl="sap.ui.commons.layout">
+	<Page id="createpage" navButtonPress="onNavBack" showNavButton="true">
+		<content>
+			<ToolbarSpacer/>
+			<f:SimpleForm layout="ResponsiveGridLayout">
+						<f:content>
+								<Label text="{i18n>query}" class="sapUiTinyMarginTop"/>
+								<HBox visible="{path:'tiletargetmodel>/status',formatter:'.formatter.handleicontabbarvisiblefrtitle'}">
+									<Select forceSelection="false" change="querySelectionChane" selectedKey="{createModel>/queryid}" items="{path: 'queryModel1>/results'}"
+										width="15em">
+										<core:Item key="{queryModel1>CubeNam}" text="{queryModel1>Dscrptn}"/>
+									</Select>
+									<ToolbarSpacer width="2em"/>
+									<Label text="{createModel>/queryid}"/>
+								</HBox>
+								<!--<Label text="Instance ID" class="sapUiTinyMarginTop"/>
+								<Input value="{createModel>/configId}" width="15em" enabled="true"/>-->
+								<Label text="{i18n>tileTemplate}" visible="{path:'tiletargetmodel>/status',formatter:'.formatter.handletiletemplate'}" class="sapUiTinyMarginTop"/>
+								<Select forceSelection="false" visible="{path:'tiletargetmodel>/status',formatter:'.formatter.handletiletemplate'}" change="_onTileChange" selectedKey="{createModel>/tileViz}" width="15em" items="{path: 'vizTypeModel>/visualList'}">
+									<core:Item key="{vizTypeModel>key}" text="{vizTypeModel>value}"/>
+								</Select>
+						</f:content>
+			</f:SimpleForm>
+			<IconTabBar id="idIconTabBar1" expanded="{device>/isNoPhone}" class="sapUiResponsiveContentPadding iconTabTop">
+				<items>
+					<IconTabFilter text="{i18n>basics}">
+						<content>
+								<f:SimpleForm layout="ResponsiveGridLayout">
+									<f:content>
+										<core:Title text="{i18n>navigation}" />
+										<!--<Toolbar height="3rem">
+											<Title text="{i18n>navigation}"/>
+										</Toolbar>-->
+										<Label text="{i18n>semobj}" class="sapUiTinyMarginTop" />
+										<Input value="{createModel>/nav_semObj}" id="inp_tile_sem" visible="{path:'tiletargetmodel>/status',formatter:'.formatter.handletiletemplate'}" enabled="true"  width="100%" valueStateText="Semantic Object is Mandatory" class="mandatory1" />
+										<Label text="{i18n>semobj}" class="sapUiTinyMarginTop" />
+										<Input value="{createModel>/configuration/tileConfiguration/semantic_object}" id="inp_targ_sem" visible="{path:'tiletargetmodel>/status',formatter:'.formatter.handleicontabbarvisiblefrtitle'}" enabled="true"  width="100%" valueStateText="Semantic Object is Mandatory" class="mandatory2" />
+										<Label text="{i18n>semact}" class="sapUiTinyMarginTop" />
+										<Input value="{createModel>/nav_semAct}" id="inp_tile_act" visible="{path:'tiletargetmodel>/status',formatter:'.formatter.handletiletemplate'}" enabled="true" width="100%" valueStateText="Semantic Action is Mandatory" class="mandatory1" />
+										<Label text="{i18n>semact}" class="sapUiTinyMarginTop" />
+										<Input value="{createModel>/configuration/tileConfiguration/semantic_action}" id="inp_targ_act" visible="{path:'tiletargetmodel>/status',formatter:'.formatter.handleicontabbarvisiblefrtitle'}" enabled="true" width="100%" valueStateText="Semantic Action is Mandatory" class="mandatory2" />
+										
+										<Label text="{i18n>apptype}" class="sapUiTinyMarginTop" />
+										<Input value="{createModel>/configuration/tileConfiguration/navigation_provider}" visible="{path:'tiletargetmodel>/status',formatter:'.formatter.handleicontabbarvisiblefrtitle'}" enabled="false" width="100%"/>
+										<Label text="{i18n>title}" class="sapUiTinyMarginTop" />
+										<Input value="{createModel>/configuration/tileConfiguration/display_title_text}" visible="{path:'tiletargetmodel>/status',formatter:'.formatter.handleicontabbarvisiblefrtitle'}" enabled="true" width="100%" valueStateText="Title is Mandatory" class="mandatory2" />
+										<Label text="{i18n>url}" class="sapUiTinyMarginTop" />
+										<Input value="{createModel>/configuration/tileConfiguration/url}" visible="{path:'tiletargetmodel>/status',formatter:'.formatter.handleicontabbarvisiblefrtitle'}" enabled="true" width="100%" valueStateText="URL is Mandatory" class="mandatory2" />
+										<Label text="{i18n>urlcomponent}" class="sapUiTinyMarginTop" />
+										<Input value="{createModel>/configuration/tileConfiguration/ui5_component}" visible="{path:'tiletargetmodel>/status',formatter:'.formatter.handleicontabbarvisiblefrtitle'}" enabled="true" width="100%" valueStateText="Component is Mandatory" class="mandatory2" />
+									</f:content>
+								</f:SimpleForm>
+						</content>
+					</IconTabFilter>
+					<IconTabFilter text="{i18n>tileoverview}"  visible="{path:'tiletargetmodel>/status',formatter:'.formatter.handleicontabbarvisible'}">
+						<content>
+							<f:SimpleForm layout="ResponsiveGridLayout">
+								<f:content>
+									<core:Title text="{i18n>general}" />
+									<!--<Toolbar height="3rem">
+											<Title text="{i18n>general}"/>
+									</Toolbar>-->
+									<Label text="{i18n>title}" class="sapUiTinyMarginTop" />
+									<Input value="{statModel>/tileConfiguration/display_title_text}" enabled="true" width="100%"/>
+									<Label text="{i18n>subTitle}" class="sapUiTinyMarginTop" />
+									<Input value="{statModel>/tileConfiguration/display_subtitle_text}" enabled="true" width="100%"/>
+									<Label text="{i18n>inform}" class="sapUiTinyMarginTop" />
+									<Input value="{statModel>/tileConfiguration/display_info_text}" enabled="true" width="100%" />
+								</f:content>	
+							</f:SimpleForm>
+						</content>
+					</IconTabFilter>
+					<IconTabFilter text="{i18n>dimension}" visible="{path:'tiletargetmodel>/status',formatter:'.formatter.handleicontabbarvisiblefrtitle'}">
+						<content>
+							<Table id="diamTabList1" width="auto" items="{diamensionModel_2>/results}" class="sapUiResponsiveMargin" visible="true">
+								<columns>
+									<Column>
+										<Text text="{i18n>dimName}"/>
+									</Column>
+									<Column>
+										<Text text="{i18n>id}"/>
+									</Column>
+									<Column>
+										<Text text="{i18n>visible}"/>
+									</Column>
+									<Column>
+										<Text text="{i18n>default}"/>
+									</Column>
+								</columns>
+								<items>
+									<ColumnListItem>
+										<cells>
+											<Text text="{diamensionModel_2>Dscrptn}"></Text>
+											<Text text="{diamensionModel_2>DimUnam}"></Text>
+											<Switch state="{diamensionModel_2>visible}" change="diamVizChange"/>
+											<Switch state="{diamensionModel_2>default}" change="diamDefChange" enabled="true"/>
+										</cells>
+									</ColumnListItem>
+								</items>
+							</Table>
+						</content>
+					</IconTabFilter>
+					<IconTabFilter text="{i18n>measures}" visible="{path:'tiletargetmodel>/status',formatter:'.formatter.handleicontabbarvisiblefrtitle'}">
+						<content>
+							<Table id="mesTabList1" width="auto" items="{measureModel_2>/results}" class="sapUiResponsiveMargin" visible="true">
+								<columns>
+									<Column>
+										<Text text="{i18n>mesName}"/>
+									</Column>
+									<Column>
+										<Text text="{i18n>id}"/>
+									</Column>
+									<Column>
+										<Text text="{i18n>visible}"/>
+									</Column>
+									<Column>
+										<Text text="{i18n>default}"/>
+									</Column>
+								</columns>
+								<items>
+									<ColumnListItem>
+										<cells>
+											<Text text="{measureModel_2>Dscrptn}"></Text>
+											<Text text="{measureModel_2>MesUnam}"></Text>
+											<Switch state="{measureModel_2>visible}" change="mesVizChange"/>
+											<Switch state="{measureModel_2>default}" change="mesDefChange" enabled="true"/>
+										</cells>
+									</ColumnListItem>
+								</items>
+							</Table>
+						</content>
+					</IconTabFilter>
+					<IconTabFilter text="{i18n>filters}"  visible="{path:'tiletargetmodel>/status',formatter:'.formatter.handleicontabbarvisiblefrtitle'}">
+						<content>
+							<Table id="filTabList1" width="auto" items="{filterModel_2>/results}" class="sapUiResponsiveMargin" visible="true">
+								<columns>
+									<Column>
+										<Text text="{i18n>filName}"/>
+									</Column>
+									<Column>
+										<Text text="{i18n>id}"/>
+									</Column>
+									<Column>
+										<Text text="{i18n>visible}"/>
+									</Column>
+									<Column>
+										<Text text="{i18n>default}"/>
+									</Column>
+									<Column>
+										<Text text="{i18n>lock}"/>
+									</Column>
+								</columns>
+								<items>
+									<ColumnListItem>
+										<cells>
+											<Text text="{filterModel_2>Dscrptn}"></Text>
+											<Text text="{filterModel_2>VarNam}"></Text>
+											<Switch state="{filterModel_2>visible}" change="filVizChange"/>
+											<Switch state="{filterModel_2>default}" change="filDefChange" enabled="true"/>
+											<Switch state="{filterModel_2>lock}" enabled="false" />
+										</cells>
+									</ColumnListItem>
+								</items>
+							</Table>
+						</content>
+					</IconTabFilter>
+					<IconTabFilter text="{i18n>options}" visible="{path:'tiletargetmodel>/status',formatter:'.formatter.handleicontabbarvisiblefrtitle'}">
+						<content>
+								<f:SimpleForm layout="ResponsiveGridLayout" labelSpanM="3" >
+									<f:content>
+										<core:Title text="{i18n>fieldMapping}" />
+										<!--<Toolbar height="3rem">
+											<Title text="{i18n>fieldMapping}"/>
+										</Toolbar>-->
+										<Label text="{i18n>usetechquery}" class="sapUiTinyMarginTop" />
+										<Switch state="{createModel>/UseTechnicalQueryNames}"/>
+										<Label text="{i18n>enableExp}" class="sapUiTinyMarginTop" />
+										<Switch state="{createModel>/EnableExportTo}"/>
+										<Label text="{i18n>showAxis}" class="sapUiTinyMarginTop" />
+										<Switch state="{createModel>/ShowYAxisLabel}"/>
+										<Label text="{i18n>visType}" class="sapUiTinyMarginTop" />
+										<Select forceSelection="false" change="vizSelChange" selectedKey="{createModel>/vizType}" items="{path: 'vizModel>/viztype'}">
+											<core:Item key="{vizModel>key}" text="{vizModel>value}"/>
+										</Select>
+										<Label text="{i18n>disViz}" class="sapUiTinyMarginTop"/>
+										<cl:MatrixLayout columns="3" direction="inherit">
+											<cl:MatrixLayoutRow>
+												<cl:MatrixLayoutCell>
+													<CheckBox text="Column" selected="{createModel>/vizCol}" enabled="{vizEnableModel>/col}" />
+												</cl:MatrixLayoutCell>
+												<cl:MatrixLayoutCell>
+													<CheckBox text="Bar" selected="{createModel>/vizBar}" enabled="{vizEnableModel>/bar}" />
+												</cl:MatrixLayoutCell>
+												<cl:MatrixLayoutCell padding="Begin">	
+													<CheckBox text="Line" selected="{createModel>/vizLine}" enabled="{vizEnableModel>/line}" />
+												</cl:MatrixLayoutCell>
+											</cl:MatrixLayoutRow>
+											<cl:MatrixLayoutRow>
+												<cl:MatrixLayoutCell>
+													<CheckBox text="Pie" selected="{createModel>/vizPie}" enabled="{vizEnableModel>/pie}" />
+												</cl:MatrixLayoutCell>
+												<cl:MatrixLayoutCell>
+													<CheckBox text="Heatmap" selected="{createModel>/vizHeat}" enabled="{vizEnableModel>/heat}" />
+												</cl:MatrixLayoutCell>
+												<cl:MatrixLayoutCell padding="Begin">	
+													<CheckBox text="Combination" selected="{createModel>/vizComp}" enabled="{vizEnableModel>/comp}" />
+												</cl:MatrixLayoutCell>
+											</cl:MatrixLayoutRow>
+											<cl:MatrixLayoutRow>
+												<cl:MatrixLayoutCell>
+													<CheckBox text="Vertical Bullet" selected="{createModel>/vizBullet}" enabled="{vizEnableModel>/bullet}" />
+												</cl:MatrixLayoutCell>
+												<cl:MatrixLayoutCell>
+													
+												</cl:MatrixLayoutCell>
+												<cl:MatrixLayoutCell padding="Begin">	
+													
+												</cl:MatrixLayoutCell>
+											</cl:MatrixLayoutRow>
+										</cl:MatrixLayout>
+										
+										<Label text="{i18n>measureDim}" class="sapUiTinyMarginTop"/>
+										<Input value="{createModel>/MeasureInDimensions}" showValueHelp="true" valueHelpRequest="valueHelpForForDimensions" width="100%" />
+										<Label text="{i18n>punchURL}" class="sapUiTinyMarginTop" />
+										<Input value="{createModel>/PO_URL}" />
+									</f:content>
+								</f:SimpleForm>
+						</content>
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+		</content>
+		<footer>
+			<Bar>
+				<contentRight>
+					<Button id="save" icon="sap-icon://save" text="Save" type="Accept" press="handleSavePress" visible="true"/>
+					<Button id="cancel" icon="sap-icon://cancel" press="handleCanPress" visible="true" text="Cancel" type="Reject"/>
+				</contentRight>
+			</Bar>
+		</footer>
+	</Page>
+</mvc:View>

@@ -1,0 +1,36 @@
+{
+	"viztype":[
+		{
+			"key":"",
+			"value":""
+		},
+		{
+			"key":"column",
+			"value":"Column"
+		},
+		{
+			"key":"bar",
+			"value":"Bar"
+		},
+		{
+			"key":"line",
+			"value":"Line"
+		},
+		{
+			"key":"pie",
+			"value":"Pie"
+		},
+		{
+			"key":"heatmap",
+			"value":"Heatmap"
+		},
+		{
+			"key":"combination",
+			"value":"Combination"
+		},
+		{
+			"key":"vertical_bullet",
+			"value":"Vertical Bullet"
+		}
+	]
+}

@@ -1,0 +1,249 @@
+{
+    "resources": [
+        {
+            "name": "Fragments/Dialog.fragment.xml"
+        },
+        {
+            "name": "Fragments/Create_Static.fragment.xml"
+        },
+        {
+            "name": "Fragments/Create_Trend.fragment.xml"
+        },
+        {
+            "name": "Fragments/Create_Bullet.fragment.xml"
+        },
+        {
+            "name": "Fragments/Create_Comparison.fragment.xml"
+        },
+        {
+            "name": "Fragments/Dynamic.fragment.xml"
+        },
+        {
+            "name": "Fragments/Create_Dynamic.fragment.xml"
+        },
+        {
+            "name": "Fragments/Create_Harvey.fragment.xml"
+        },
+        {
+            "name": "Fragments/Trend.fragment.xml"
+        },
+        {
+            "name": "Fragments/Comparison.fragment.xml"
+        },
+        {
+            "name": "Fragments/Harvey.fragment.xml"
+        },
+        {
+            "name": "Fragments/Create_Column.fragment.xml"
+        },
+        {
+            "name": "Fragments/Column.fragment.xml"
+        },
+        {
+            "name": "Fragments/Bullet.fragment.xml"
+        },
+        {
+            "name": "Fragments/Static.fragment.xml"
+        },
+        {
+            "name": "test/integration/MasterJourney.js"
+        },
+        {
+            "name": "test/integration/opaTests.qunit.html"
+        },
+        {
+            "name": "test/integration/opaTestsPhone.qunit.html"
+        },
+        {
+            "name": "test/integration/BusyJourneyPhone.js"
+        },
+        {
+            "name": "test/integration/AllJourneys.js"
+        },
+        {
+            "name": "test/integration/NotFoundJourneyPhone.js"
+        },
+        {
+            "name": "test/integration/NotFoundJourney.js"
+        },
+        {
+            "name": "test/integration/pages/App.js"
+        },
+        {
+            "name": "test/integration/pages/Common.js"
+        },
+        {
+            "name": "test/integration/pages/Browser.js"
+        },
+        {
+            "name": "test/integration/pages/Master.js"
+        },
+        {
+            "name": "test/integration/pages/NotFound.js"
+        },
+        {
+            "name": "test/integration/pages/Detail.js"
+        },
+        {
+            "name": "test/integration/NavigationJourneyPhone.js"
+        },
+        {
+            "name": "test/integration/PhoneJourneys.js"
+        },
+        {
+            "name": "test/integration/NavigationJourney.js"
+        },
+        {
+            "name": "test/integration/FLPIntegrationJourney.js"
+        },
+        {
+            "name": "test/integration/BusyJourney.js"
+        },
+        {
+            "name": "test/unit/model/formatter.js"
+        },
+        {
+            "name": "test/unit/model/models.js"
+        },
+        {
+            "name": "test/unit/unitTests.qunit.html"
+        },
+        {
+            "name": "test/unit/controller/ListSelector.js"
+        },
+        {
+            "name": "test/unit/controller/App.controller.js"
+        },
+        {
+            "name": "test/unit/allTests.js"
+        },
+        {
+            "name": "test/preview_hidden.html"
+        },
+        {
+            "name": "test/flpSandbox.html"
+        },
+        {
+            "name": "test/testsuite.qunit.html"
+        },
+        {
+            "name": "test/flpSandboxMockServer.html"
+        },
+        {
+            "name": "Component.js"
+        },
+        {
+            "name": "controller/ErrorHandler.js"
+        },
+        {
+            "name": "controller/Create.controller.js"
+        },
+        {
+            "name": "controller/Detail.controller.js"
+        },
+        {
+            "name": "controller/Master.controller.js"
+        },
+        {
+            "name": "controller/BaseController.js"
+        },
+        {
+            "name": "controller/ListSelector.js"
+        },
+        {
+            "name": "controller/Services.js"
+        },
+        {
+            "name": "controller/App.controller.js"
+        },
+        {
+            "name": "test.html"
+        },
+        {
+            "name": "index.html"
+        },
+        {
+            "name": "i18n/i18n.properties",
+            "raw": "i18n/i18n.properties"
+        },
+        {
+            "name": "view/Create.view.xml"
+        },
+        {
+            "name": "view/Empty.view.xml"
+        },
+        {
+            "name": "view/DetailNoObjectsAvailable.view.xml"
+        },
+        {
+            "name": "view/ViewSettingsDialog.fragment.xml"
+        },
+        {
+            "name": "view/NotFound.view.xml"
+        },
+        {
+            "name": "view/Master.view.xml"
+        },
+        {
+            "name": "view/App.view.xml"
+        },
+        {
+            "name": "view/DetailObjectNotFound.view.xml"
+        },
+        {
+            "name": "view/Detail.view.xml"
+        },
+        {
+            "name": "model/dimension.json"
+        },
+        {
+            "name": "model/mesures.json"
+        },
+        {
+            "name": "model/visualType.json"
+        },
+        {
+            "name": "model/detailquery.json"
+        },
+        {
+            "name": "model/master.json"
+        },
+        {
+            "name": "model/create.json"
+        },
+        {
+            "name": "model/formatter.js"
+        },
+        {
+            "name": "model/detail.json"
+        },
+        {
+            "name": "model/models.js"
+        },
+        {
+            "name": "model/filter.json"
+        },
+        {
+            "name": "localService/metadata.xml"
+        },
+        {
+            "name": "localService/mockserver.js"
+        },
+        {
+            "name": "localService/Northwind.svc/metadata.xml"
+        },
+        {
+            "name": "manifest.json"
+        },
+        {
+            "name": "preview_hidden.html"
+        },
+        {
+            "name": "Component-preload.js",
+            "merged": true
+        },
+        {
+            "name": "neo-app.json"
+        }
+    ]
+}
